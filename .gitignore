@@ -1,0 +1,9 @@
+.*~
+*~
+*.swp
+*xz
+*gz
+
+results
+rpms
+testresults
