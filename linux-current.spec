@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.1.0
-Release:        2
+Version:        5.1.4
+Release:        3
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.1.tar.xz
+Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.1.4.tar.xz
 Source1:        config
 Source2:        cmdline
 
@@ -60,6 +60,7 @@ Patch0123: 0123-add-scheduler-turbo3-patch.patch
 Patch0124: 0124-use-lfence-instead-of-rep-and-nop.patch
 Patch0125: 0125-do-accept-in-LIFO-order-for-cache-efficiency.patch
 Patch0126: 0126-locking-rwsem-spin-faster.patch
+patch0127: 0127-zero-extra-registers.patch
 #Serie.end
 
 #Serie1.name WireGuard
@@ -108,7 +109,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files and install script
 
 %prep
-%setup -q -n linux-5.1
+%setup -q -n linux-5.1.4
 
 #cve.patch.start cve patches
 #cve.patch.end
@@ -143,6 +144,7 @@ Linux kernel build files and install script
 %patch0124 -p1
 %patch0125 -p1
 %patch0126 -p1
+%patch0127 -p1
 #Serie.patch.end
 
 #Serie1.patch.start
