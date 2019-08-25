@@ -45,10 +45,8 @@ Patch0107: 0107-bootstats-add-printk-s-to-measure-boot-time-in-more-.patch
 Patch0108: 0108-smpboot-reuse-timer-calibration.patch
 Patch0109: 0109-raid6-add-Kconfig-option-to-skip-raid6-benchmarking.patch
 Patch0110: 0110-Initialize-ata-before-graphics.patch
-Patch0111: 0111-reduce-e1000e-boot-time-by-tightening-sleep-ranges.patch
 Patch0112: 0112-give-rdrand-some-credit.patch
 Patch0113: 0113-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
-Patch0114: 0114-e1000e-increase-pause-and-refresh-time.patch
 Patch0115: 0115-kernel-time-reduce-ntp-wakeups.patch
 Patch0116: 0116-init-wait-for-partition-and-retry-scan.patch
 Patch0117: 0117-print-fsync-count-for-bootchart.patch
