@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.1.4
+Version:        5.3.rc5
 Release:        3
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.1.4.tar.xz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.3-rc5.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -109,7 +109,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files and install script
 
 %prep
-%setup -q -n linux-5.1.4
+%setup -q -n linux-5.3-rc5
 
 #cve.patch.start cve patches
 #cve.patch.end
@@ -163,6 +163,7 @@ BuildKernel() {
     Arch=x86_64
     ExtraVer="-%{release}.${Target}"
 
+    perl -p -i -e "s/^SUBLEVEL.*/SUBLEVEL = rc5/" Makefile
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
     make O=${Target} -s mrproper
