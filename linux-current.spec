@@ -59,7 +59,6 @@ Patch0123: 0123-use-lfence-instead-of-rep-and-nop.patch
 Patch0124: 0124-do-accept-in-LIFO-order-for-cache-efficiency.patch
 Patch0125: 0125-zero-extra-registers.patch
 Patch0126: 0126-locking-rwsem-spin-faster.patch
-Patch0127: 0127-thp-fix.patch
 Patch0128: 0128-ata-libahci-ignore-staggered-spin-up.patch
 Patch0129: 0129-print-CPU-that-faults.patch
 Patch0130: 0130-x86-microcode-Force-update-a-uCode-even-if-the-rev-i.patch
