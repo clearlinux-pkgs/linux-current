@@ -211,10 +211,10 @@ This project is released under the [GPLv2](COPYING).
  create mode 100644 net/wireguard/version.h
 
 diff --git a/net/Kconfig b/net/Kconfig
-index d122f53c6fa2..ccf00655100b 100644
+index 57f51a279ad6..6006564bc33b 100644
 --- a/net/Kconfig
 +++ b/net/Kconfig
-@@ -90,6 +90,7 @@ config INET
+@@ -88,6 +88,7 @@ config INET
  	  Short answer: say Y.
  
  if INET

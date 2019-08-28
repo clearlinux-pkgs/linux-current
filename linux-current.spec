@@ -45,24 +45,24 @@ Patch0107: 0107-bootstats-add-printk-s-to-measure-boot-time-in-more-.patch
 Patch0108: 0108-smpboot-reuse-timer-calibration.patch
 Patch0109: 0109-raid6-add-Kconfig-option-to-skip-raid6-benchmarking.patch
 Patch0110: 0110-Initialize-ata-before-graphics.patch
-Patch0112: 0112-give-rdrand-some-credit.patch
-Patch0113: 0113-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
-Patch0115: 0115-kernel-time-reduce-ntp-wakeups.patch
-Patch0116: 0116-init-wait-for-partition-and-retry-scan.patch
-Patch0117: 0117-print-fsync-count-for-bootchart.patch
-Patch0118: 0118-Add-boot-option-to-allow-unsigned-modules.patch
-Patch0119: 0119-Enable-stateless-firmware-loading.patch
-Patch0120: 0120-Migrate-some-systemd-defaults-to-the-kernel-defaults.patch
-Patch0121: 0121-xattr-allow-setting-user.-attributes-on-symlinks-by-.patch
-Patch0122: 0122-add-scheduler-turbo3-patch.patch
-Patch0123: 0123-use-lfence-instead-of-rep-and-nop.patch
-Patch0124: 0124-do-accept-in-LIFO-order-for-cache-efficiency.patch
-Patch0125: 0125-zero-extra-registers.patch
-Patch0126: 0126-locking-rwsem-spin-faster.patch
-Patch0128: 0128-ata-libahci-ignore-staggered-spin-up.patch
-Patch0129: 0129-print-CPU-that-faults.patch
-Patch0130: 0130-x86-microcode-Force-update-a-uCode-even-if-the-rev-i.patch
-Patch0131: 0131-x86-microcode-echo-2-reload-to-force-load-ucode.patch
+Patch0111: 0111-give-rdrand-some-credit.patch
+Patch0112: 0112-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
+Patch0113: 0113-kernel-time-reduce-ntp-wakeups.patch
+Patch0114: 0114-init-wait-for-partition-and-retry-scan.patch
+Patch0115: 0115-print-fsync-count-for-bootchart.patch
+Patch0116: 0116-Add-boot-option-to-allow-unsigned-modules.patch
+Patch0117: 0117-Enable-stateless-firmware-loading.patch
+Patch0118: 0118-Migrate-some-systemd-defaults-to-the-kernel-defaults.patch
+Patch0119: 0119-xattr-allow-setting-user.-attributes-on-symlinks-by-.patch
+Patch0120: 0120-add-scheduler-turbo3-patch.patch
+Patch0121: 0121-use-lfence-instead-of-rep-and-nop.patch
+Patch0122: 0122-do-accept-in-LIFO-order-for-cache-efficiency.patch
+Patch0123: 0123-zero-extra-registers.patch
+Patch0124: 0124-locking-rwsem-spin-faster.patch
+Patch0125: 0125-ata-libahci-ignore-staggered-spin-up.patch
+Patch0126: 0126-print-CPU-that-faults.patch
+Patch0127: 0127-x86-microcode-Force-update-a-uCode-even-if-the-rev-i.patch
+Patch0128: 0128-x86-microcode-echo-2-reload-to-force-load-ucode.patch
 #Serie.end
 
 #Serie1.name WireGuard
@@ -149,9 +149,6 @@ Linux kernel build files and install script
 %patch0126 -p1
 %patch0127 -p1
 %patch0128 -p1
-%patch0129 -p1
-%patch0130 -p1
-%patch0131 -p1
 #Serie.patch.end
 
 #Serie1.patch.start
