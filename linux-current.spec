@@ -3,8 +3,8 @@
 #
 
 Name:           linux-current
-Version:        5.3.rc5
-Release:        3
+Version:        5.3.0
+Release:        4
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
@@ -164,7 +164,6 @@ BuildKernel() {
     Arch=x86_64
     ExtraVer="-%{release}.${Target}"
 
-    perl -p -i -e "s/^SUBLEVEL.*/SUBLEVEL = rc5/" Makefile
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
     make O=${Target} -s mrproper
