@@ -4,7 +4,7 @@
 
 Name:           linux-current
 Version:        5.3.0
-Release:        6
+Release:        7
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
@@ -27,7 +27,7 @@ Requires: linux-current-license = %{version}-%{release}
 %define debug_package %{nil}
 %define __strip /bin/true
 
-# kconfig: linux-5.2.11-829
+# kconfig: linux-5.2.13-832
 
 #cve.start cve patches from 0001 to 050
 Patch0001: CVE-2019-12379.patch
