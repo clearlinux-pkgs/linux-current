@@ -4,12 +4,12 @@
 
 Name:           linux-current
 Version:        5.3.0
-Release:        7
+Release:        8
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://git.kernel.org/torvalds/t/linux-5.3-rc7.tar.gz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.3-rc8.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -113,7 +113,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files and install script
 
 %prep
-%setup -q -n linux-5.3-rc7
+%setup -q -n linux-5.3-rc8
 
 #cve.patch.start cve patches
 %patch0001 -p1
