@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.3.0
-Release:        9
+Version:        5.3.1
+Release:        10
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.3.tar.xz
+Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.3.1.tar.xz
 Source1:        config
 Source2:        cmdline
 
@@ -99,7 +99,7 @@ Summary:        cpio file with kenrel modules
 Group:          kernel
 
 %description cpio
-Creates a cpio file with i8042 module
+Creates a cpio file with some modules
 
 %package dev
 License:        GPL-2.0
@@ -110,10 +110,10 @@ Requires:       linux-current-extra = %{version}-%{release}
 Requires:       linux-current-license = %{version}-%{release}
 
 %description dev
-Linux kernel build files and install script
+Linux kernel build files
 
 %prep
-%setup -q -n linux-5.3
+%setup -q -n linux-5.3.1
 
 #cve.patch.start cve patches
 %patch0001 -p1
@@ -222,7 +222,7 @@ InstallKernel() {
     ln -s org.clearlinux.${Target}.%{version}-%{release} %{buildroot}/usr/lib/kernel/default-${Target}
 }
 
-# cpio file for i8042 libps2 atkbd
+# cpio file for keyboard drivers
 createCPIO() {
 
     Target=$1
