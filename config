@@ -1,10 +1,10 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.3.0-rc7 Kernel Configuration
+# Linux/x86 5.3.1 Kernel Configuration
 #
 
 #
-# Compiler: gcc (Clear Linux OS for Intel Architecture) 9.2.1 20190906 gcc-9-branch@275448
+# Compiler: gcc (Clear Linux OS for Intel Architecture) 9.2.1 20190919 gcc-9-branch@275923
 #
 CONFIG_CC_IS_GCC=y
 CONFIG_GCC_VERSION=90201
@@ -8298,10 +8298,9 @@ CONFIG_ARCH_STACKWALK=y
 CONFIG_STACKDEPOT=y
 CONFIG_SBITMAP=y
 CONFIG_PARMAN=m
+CONFIG_OBJAGG=m
 # CONFIG_STRING_SELFTEST is not set
 # end of Library routines
-
-CONFIG_OBJAGG=m
 
 #
 # Kernel hacking
