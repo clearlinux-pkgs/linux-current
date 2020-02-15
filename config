@@ -4,7 +4,7 @@
 #
 
 #
-# Compiler: gcc (Clear Linux OS for Intel Architecture) 9.2.1 20200214 gcc_9_2_0_release-615-g7866f9ebf1
+# Compiler: gcc (Clear Linux OS for Intel Architecture) 9.2.1 20200214 gcc_9_2_0_release-626-gc1379a1c64
 #
 CONFIG_CC_IS_GCC=y
 CONFIG_GCC_VERSION=90201
@@ -8795,3 +8795,8 @@ CONFIG_ASYNC_RAID6_TEST=m
 # CONFIG_HYPERV_TESTING is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
+
+
+# kernel-config sources:
+# FILEVER=/usr/share/kernel-config/base-5.6-4-41
+# FILEVER=/usr/share/kernel-config/mandatory-5.6-4-41
