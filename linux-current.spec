@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.3.1
-Release:        11
+Version:        5.6.0.rc1
+Release:        12
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.3.1.tar.xz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.6-rc1.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -27,7 +27,7 @@ Requires: linux-current-license = %{version}-%{release}
 %define debug_package %{nil}
 %define __strip /bin/true
 
-# kconfig: linux-5.2.13-832
+# kconfig: linux-5.5.4-909
 
 #cve.start cve patches from 0001 to 050
 Patch0001: CVE-2019-12379.patch
@@ -65,14 +65,10 @@ Patch0125: 0125-ata-libahci-ignore-staggered-spin-up.patch
 Patch0126: 0126-print-CPU-that-faults.patch
 Patch0127: 0127-x86-microcode-Force-update-a-uCode-even-if-the-rev-i.patch
 Patch0128: 0128-x86-microcode-echo-2-reload-to-force-load-ucode.patch
+Patch0129: 0129-fix-bug-in-ucode-force-reload-revision-check.patch
+Patch0130: 0130-nvme-workaround.patch
+Patch0131: 0131-Don-t-report-an-error-if-PowerClamp-run-on-other-CPU.patch
 #Serie.end
-
-#Serie1.name WireGuard
-#Serie1.git  https://git.zx2c4.com/WireGuard
-#Serie1.cmt  7bf34f50d41e8b60e01846baa2eb304697fab89c
-#Serie1.tag  0.0.20190913
-Patch1001: 1001-WireGuard-fast-modern-secure-kernel-VPN-tunnel.patch
-#Serie1.end
 
 %description
 The Linux kernel.
@@ -113,7 +109,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.3.1
+%setup -q -n linux-5.6-rc1
 
 #cve.patch.start cve patches
 %patch0001 -p1
@@ -151,11 +147,10 @@ Linux kernel build files
 %patch0126 -p1
 %patch0127 -p1
 %patch0128 -p1
+%patch0129 -p1
+%patch0130 -p1
+%patch0131 -p1
 #Serie.patch.end
-
-#Serie1.patch.start
-%patch1001 -p1
-#Serie1.patch.end
 
 cp %{SOURCE1} .
 
@@ -164,7 +159,7 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer="-%{release}.${Target}"
+    ExtraVer=".rc1-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
