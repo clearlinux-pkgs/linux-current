@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.6.0-rc1 Kernel Configuration
+# Linux/x86 5.6.0-rc2 Kernel Configuration
 #
 
 #
@@ -8470,7 +8470,6 @@ CONFIG_CLZ_TAB=y
 CONFIG_IRQ_POLL=y
 CONFIG_MPILIB=y
 CONFIG_DIMLIB=y
-CONFIG_LIBXBC=y
 CONFIG_OID_REGISTRY=y
 CONFIG_UCS2_STRING=y
 CONFIG_HAVE_GENERIC_VDSO=y
@@ -8795,8 +8794,3 @@ CONFIG_ASYNC_RAID6_TEST=m
 # CONFIG_HYPERV_TESTING is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
-
-
-# kernel-config sources:
-# FILEVER=/usr/share/kernel-config/base-5.6-4-41
-# FILEVER=/usr/share/kernel-config/mandatory-5.6-4-41
