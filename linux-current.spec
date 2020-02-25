@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.6.0.rc2
+Version:        5.6.0.rc3
 Release:        13
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://git.kernel.org/torvalds/t/linux-5.6-rc2.tar.gz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.6-rc3.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -34,6 +34,7 @@ Patch0001: CVE-2019-12379.patch
 #cve.end
 
 #mainline: Mainline patches, upstream backport and fixes from 0051 to 0099
+Patch0051: 0051-iwlwifi-mvm-Do-not-require-PHY_SKU-NVM-section-for-3.patch
 #mainline.end
 
 #Serie.clr 01XX: Clear Linux patches
@@ -109,13 +110,14 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.6-rc2
+%setup -q -n linux-5.6-rc3
 
 #cve.patch.start cve patches
 %patch0001 -p1
 #cve.patch.end
 
 #mainline.patch.start Mainline patches, upstream backport and fixes
+%patch0051 -p1
 #mainline.patch.end
 
 #Serie.patch.start Clear Linux patches
@@ -159,7 +161,7 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer=".rc2-%{release}.${Target}"
+    ExtraVer=".rc3-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
