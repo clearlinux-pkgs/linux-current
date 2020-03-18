@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.6.0.rc5
-Release:        15
+Version:        5.6.0.rc6
+Release:        16
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://git.kernel.org/torvalds/t/linux-5.6-rc5.tar.gz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.6-rc6.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -109,7 +109,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.6-rc5
+%setup -q -n linux-5.6-rc6
 
 #cve.patch.start cve patches
 %patch0001 -p1
@@ -159,7 +159,7 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer=".rc5-%{release}.${Target}"
+    ExtraVer=".rc6-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
