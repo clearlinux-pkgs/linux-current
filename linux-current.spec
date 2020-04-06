@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.6.0.rc6
-Release:        16
+Version:        5.6.2
+Release:        17
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://git.kernel.org/torvalds/t/linux-5.6-rc6.tar.gz
+Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.6.2.tar.xz
 Source1:        config
 Source2:        cmdline
 
@@ -27,7 +27,7 @@ Requires: linux-current-license = %{version}-%{release}
 %define debug_package %{nil}
 %define __strip /bin/true
 
-# kconfig: linux-5.5.4-909
+# kconfig: linux-5.6.2-932
 
 #cve.start cve patches from 0001 to 050
 Patch0001: CVE-2019-12379.patch
@@ -109,7 +109,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.6-rc6
+%setup -q -n linux-5.6.2
 
 #cve.patch.start cve patches
 %patch0001 -p1
@@ -159,7 +159,8 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer=".rc6-%{release}.${Target}"
+    ExtraVer="-%{release}.${Target}"
+    #ExtraVer=".rc6-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 

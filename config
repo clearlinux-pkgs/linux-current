@@ -1,13 +1,13 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.6.0-rc6 Kernel Configuration
+# Linux/x86 5.6.2 Kernel Configuration
 #
 
 #
-# Compiler: gcc (Clear Linux OS for Intel Architecture) 9.2.1 20200310 gcc_9_2_0_release-744-g85c08558c6
+# Compiler: gcc (Clear Linux OS for Intel Architecture) 9.3.1 20200403 releases/gcc-9.3.0-89-g70ae616922
 #
 CONFIG_CC_IS_GCC=y
-CONFIG_GCC_VERSION=90201
+CONFIG_GCC_VERSION=90301
 CONFIG_CLANG_VERSION=0
 CONFIG_CC_CAN_LINK=y
 CONFIG_CC_HAS_ASM_GOTO=y
@@ -999,6 +999,7 @@ CONFIG_NET=y
 CONFIG_COMPAT_NETLINK_MESSAGES=y
 CONFIG_NET_INGRESS=y
 CONFIG_NET_EGRESS=y
+CONFIG_NET_REDIRECT=y
 CONFIG_SKB_EXTENSIONS=y
 
 #
@@ -2239,6 +2240,9 @@ CONFIG_VMWARE_BALLOON=m
 # CONFIG_XILINX_SDFEC is not set
 CONFIG_MISC_RTSX=y
 CONFIG_PVPANIC=m
+CONFIG_ORACLE_VBOXGUEST=m
+CONFIG_ORACLE_VBOXSF=m
+CONFIG_ORACLE_VBOXVIDEO=m
 # CONFIG_C2PORT is not set
 
 #
@@ -8795,3 +8799,8 @@ CONFIG_ASYNC_RAID6_TEST=m
 # CONFIG_HYPERV_TESTING is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
+
+
+# kernel-config sources:
+# FILEVER=/usr/share/kernel-config/base-5.6-4-42
+# FILEVER=/usr/share/kernel-config/mandatory-5.6-4-42
