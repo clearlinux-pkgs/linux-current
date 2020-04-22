@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.6.6
-Release:        24
+Version:        5.7.0.rc2
+Release:        25
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.6.6.tar.xz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.7-rc2.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -27,7 +27,7 @@ Requires: linux-current-license = %{version}-%{release}
 %define debug_package %{nil}
 %define __strip /bin/true
 
-# kconfig: linux-5.6.6-932
+# kconfig: linux-5.6.6-942
 
 #cve.start cve patches from 0001 to 050
 #cve.end
@@ -58,15 +58,15 @@ Patch0119: 0119-xattr-allow-setting-user.-attributes-on-symlinks-by-.patch
 Patch0120: 0120-add-scheduler-turbo3-patch.patch
 Patch0121: 0121-use-lfence-instead-of-rep-and-nop.patch
 Patch0122: 0122-do-accept-in-LIFO-order-for-cache-efficiency.patch
-Patch0123: 0123-zero-extra-registers.patch
-Patch0124: 0124-locking-rwsem-spin-faster.patch
-Patch0125: 0125-ata-libahci-ignore-staggered-spin-up.patch
-Patch0126: 0126-print-CPU-that-faults.patch
-Patch0127: 0127-x86-microcode-Force-update-a-uCode-even-if-the-rev-i.patch
-Patch0128: 0128-x86-microcode-echo-2-reload-to-force-load-ucode.patch
-Patch0129: 0129-fix-bug-in-ucode-force-reload-revision-check.patch
-Patch0130: 0130-nvme-workaround.patch
-Patch0131: 0131-Don-t-report-an-error-if-PowerClamp-run-on-other-CPU.patch
+Patch0123: 0123-locking-rwsem-spin-faster.patch
+Patch0124: 0124-ata-libahci-ignore-staggered-spin-up.patch
+Patch0125: 0125-print-CPU-that-faults.patch
+Patch0126: 0126-x86-microcode-Force-update-a-uCode-even-if-the-rev-i.patch
+Patch0127: 0127-x86-microcode-echo-2-reload-to-force-load-ucode.patch
+Patch0128: 0128-fix-bug-in-ucode-force-reload-revision-check.patch
+Patch0129: 0129-nvme-workaround.patch
+Patch0130: 0130-Don-t-report-an-error-if-PowerClamp-run-on-other-CPU.patch
+Patch0131: 0131-overload-on-wakeup.patch
 #Serie.end
 
 %description
@@ -108,7 +108,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.6.6
+%setup -q -n linux-5.7-rc2
 
 #cve.patch.start cve patches
 #cve.patch.end
@@ -157,8 +157,7 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer="-%{release}.${Target}"
-    #ExtraVer=".rc6-%{release}.${Target}"
+    ExtraVer=".rc2-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
