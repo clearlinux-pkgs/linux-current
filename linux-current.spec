@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.7.0.rc4
-Release:        27
+Version:        5.7.0.rc6
+Release:        28
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://git.kernel.org/torvalds/t/linux-5.7-rc4.tar.gz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.7-rc6.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -108,7 +108,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.7-rc4
+%setup -q -n linux-5.7-rc6
 
 #cve.patch.start cve patches
 #cve.patch.end
@@ -157,7 +157,7 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer=".rc4-%{release}.${Target}"
+    ExtraVer=".rc6-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 

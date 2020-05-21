@@ -1,19 +1,18 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.7.0-rc4 Kernel Configuration
+# Linux/x86 5.7.0-rc6 Kernel Configuration
 #
 
 #
-# Compiler: gcc (Clear Linux OS for Intel Architecture) 9.3.1 20200501 releases/gcc-9.3.0-196-gcb2c76c8b1
+# Compiler: gcc (Clear Linux OS for Intel Architecture) 10.1.1 20200520 releases/gcc-10.1.0-53-g8358ac9bbc
 #
 CONFIG_CC_IS_GCC=y
-CONFIG_GCC_VERSION=90301
+CONFIG_GCC_VERSION=100101
 CONFIG_LD_VERSION=234000000
 CONFIG_CLANG_VERSION=0
 CONFIG_CC_CAN_LINK=y
 CONFIG_CC_HAS_ASM_GOTO=y
 CONFIG_CC_HAS_ASM_INLINE=y
-CONFIG_CC_HAS_WARN_MAYBE_UNINITIALIZED=y
 CONFIG_IRQ_WORK=y
 CONFIG_BUILDTIME_TABLE_SORT=y
 CONFIG_THREAD_INFO_IN_TASK=y
@@ -911,6 +910,7 @@ CONFIG_ARCH_USE_QUEUED_SPINLOCKS=y
 CONFIG_QUEUED_SPINLOCKS=y
 CONFIG_ARCH_USE_QUEUED_RWLOCKS=y
 CONFIG_QUEUED_RWLOCKS=y
+CONFIG_ARCH_HAS_NON_OVERLAPPING_ADDRESS_SPACE=y
 CONFIG_ARCH_HAS_SYNC_CORE_BEFORE_USERMODE=y
 CONFIG_ARCH_HAS_SYSCALL_WRAPPER=y
 CONFIG_FREEZER=y
@@ -8873,3 +8873,8 @@ CONFIG_ASYNC_RAID6_TEST=m
 # CONFIG_HYPERV_TESTING is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
+
+
+# kernel-config sources:
+# FILEVER=/usr/share/kernel-config/base-5-4-44
+# FILEVER=/usr/share/kernel-config/mandatory-5-4-44
