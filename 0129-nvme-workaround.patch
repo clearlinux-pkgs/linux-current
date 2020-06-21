@@ -8,7 +8,7 @@ Subject: [PATCH] nvme workaround
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/nvme/host/core.c b/drivers/nvme/host/core.c
-index c2c5bc4fb..45f366520 100644
+index c2c5bc4..45f3665 100644
 --- a/drivers/nvme/host/core.c
 +++ b/drivers/nvme/host/core.c
 @@ -48,7 +48,7 @@ static u8 nvme_max_retries = 5;
