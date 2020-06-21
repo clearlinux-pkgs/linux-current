@@ -1,8 +1,8 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.8.0-rc1 Kernel Configuration
+# Linux/x86 5.8.0-rc2 Kernel Configuration
 #
-CONFIG_CC_VERSION_TEXT="gcc (Clear Linux OS for Intel Architecture) 10.1.1 20200610 releases/gcc-10.1.0-162-g5bb75908cb"
+CONFIG_CC_VERSION_TEXT="gcc (Clear Linux OS for Intel Architecture) 10.1.1 20200618 releases/gcc-10.1.0-218-g6e81b0cf4f"
 CONFIG_CC_IS_GCC=y
 CONFIG_GCC_VERSION=100101
 CONFIG_LD_VERSION=234000000
@@ -8647,8 +8647,6 @@ CONFIG_ARCH_DMA_ADDR_T_64BIT=y
 CONFIG_ARCH_HAS_FORCE_DMA_UNENCRYPTED=y
 CONFIG_DMA_VIRT_OPS=y
 CONFIG_SWIOTLB=y
-CONFIG_DMA_NONCOHERENT_MMAP=y
-CONFIG_DMA_REMAP=y
 CONFIG_DMA_COHERENT_POOL=y
 # CONFIG_DMA_API_DEBUG is not set
 CONFIG_SGL_ALLOC=y
@@ -8996,3 +8994,8 @@ CONFIG_ASYNC_RAID6_TEST=m
 # CONFIG_HYPERV_TESTING is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
+
+
+# kernel-config sources:
+# FILEVER=/usr/share/kernel-config/base-5-4-44
+# FILEVER=/usr/share/kernel-config/mandatory-5-4-44
