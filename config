@@ -2,13 +2,12 @@
 # Automatically generated file; DO NOT EDIT.
 # Linux/x86 5.8.0-rc3 Kernel Configuration
 #
-CONFIG_CC_VERSION_TEXT="gcc (Clear Linux OS for Intel Architecture) 10.1.1 20200625 releases/gcc-10.1.0-262-gd9b3aa517b"
+CONFIG_CC_VERSION_TEXT="gcc (Clear Linux OS for Intel Architecture) 10.1.1 20200702 releases/gcc-10.1.0-308-g41b504e91e"
 CONFIG_CC_IS_GCC=y
 CONFIG_GCC_VERSION=100101
 CONFIG_LD_VERSION=234000000
 CONFIG_CLANG_VERSION=0
 CONFIG_CC_CAN_LINK=y
-CONFIG_CC_CAN_LINK_STATIC=y
 CONFIG_CC_HAS_ASM_GOTO=y
 CONFIG_CC_HAS_ASM_INLINE=y
 CONFIG_IRQ_WORK=y
@@ -1477,7 +1476,6 @@ CONFIG_BRIDGE_EBT_SNAT=y
 CONFIG_BRIDGE_EBT_LOG=y
 CONFIG_BRIDGE_EBT_NFLOG=y
 CONFIG_BPFILTER=y
-CONFIG_BPFILTER_UMH=m
 # CONFIG_IP_DCCP is not set
 CONFIG_IP_SCTP=m
 # CONFIG_SCTP_DBG_OBJCNT is not set
@@ -8997,3 +8995,8 @@ CONFIG_ASYNC_RAID6_TEST=m
 # CONFIG_HYPERV_TESTING is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
+
+
+# kernel-config sources:
+# FILEVER=/usr/share/kernel-config/base-5.8-4-45
+# FILEVER=/usr/share/kernel-config/mandatory-5.8-4-45
