@@ -24,10 +24,10 @@ index 03252af..b305323 100644
  			char b[BDEVNAME_SIZE];
  			printk(KERN_DEBUG "%s(%d): %s block %Lu on %s (%u sectors)\n",
 diff --git a/include/linux/sched.h b/include/linux/sched.h
-index 692e327..4de786c 100644
+index 6833729..2a59b11 100644
 --- a/include/linux/sched.h
 +++ b/include/linux/sched.h
-@@ -901,6 +901,7 @@ struct task_struct {
+@@ -897,6 +897,7 @@ struct task_struct {
  	/* Cached requested key. */
  	struct key			*cached_requested_key;
  #endif
