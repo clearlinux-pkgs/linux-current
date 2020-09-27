@@ -4,7 +4,7 @@
 
 Name:           linux-current
 Version:        5.9.0.rc6
-Release:        38
+Release:        39
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
