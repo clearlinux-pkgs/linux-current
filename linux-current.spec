@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.9.0.rc6
-Release:        39
+Version:        5.9.0.rc7
+Release:        40
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://git.kernel.org/torvalds/t/linux-5.9-rc6.tar.gz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.9-rc7.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -107,7 +107,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.9-rc6
+%setup -q -n linux-5.9-rc7
 
 #cve.patch.start cve patches
 #cve.patch.end
@@ -155,7 +155,7 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer=".rc6-%{release}.${Target}"
+    ExtraVer=".rc7-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 

@@ -1,11 +1,11 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.9.0-rc6 Kernel Configuration
+# Linux/x86 5.9.0-rc7 Kernel Configuration
 #
-CONFIG_CC_VERSION_TEXT="gcc (Clear Linux OS for Intel Architecture) 10.2.1 20200915 releases/gcc-10.2.0-253-g49b3d88e9d"
+CONFIG_CC_VERSION_TEXT="gcc (Clear Linux OS for Intel Architecture) 10.2.1 20200924 releases/gcc-10.2.0-279-gaa47c98734"
 CONFIG_CC_IS_GCC=y
 CONFIG_GCC_VERSION=100201
-CONFIG_LD_VERSION=235000000
+CONFIG_LD_VERSION=235010000
 CONFIG_CLANG_VERSION=0
 CONFIG_CC_CAN_LINK=y
 CONFIG_CC_CAN_LINK_STATIC=y
@@ -9046,3 +9046,8 @@ CONFIG_ASYNC_RAID6_TEST=m
 # CONFIG_HYPERV_TESTING is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
+
+
+# kernel-config sources:
+# FILEVER=/usr/share/kernel-config/base-5-4-46
+# FILEVER=/usr/share/kernel-config/mandatory-5-4-46
