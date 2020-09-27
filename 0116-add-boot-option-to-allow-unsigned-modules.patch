@@ -14,7 +14,7 @@ Signed-off-by: Miguel Bernal Marin <miguel.bernal.marin@linux.intel.com>
  1 file changed, 20 insertions(+)
 
 diff --git a/kernel/module.c b/kernel/module.c
-index 1c5cff34d..d753f5ef7 100644
+index 1c5cff3..d753f5e 100644
 --- a/kernel/module.c
 +++ b/kernel/module.c
 @@ -56,6 +56,7 @@
