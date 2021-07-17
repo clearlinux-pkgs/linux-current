@@ -33,6 +33,7 @@ Requires: linux-current-license = %{version}-%{release}
 #cve.end
 
 #mainline: Mainline patches, upstream backport and fixes from 0051 to 0099
+Patch0051: 0051-ALSA-hda-hdmi-Add-quirk-to-force-pin-connectivity-on.patch
 #mainline.end
 
 #Serie.clr 01XX: Clear Linux patches
@@ -44,28 +45,26 @@ Patch0105: 0105-ksm-wakeups.patch
 Patch0106: 0106-intel_idle-tweak-cpuidle-cstates.patch
 Patch0107: 0107-bootstats-add-printk-s-to-measure-boot-time-in-more-.patch
 Patch0108: 0108-smpboot-reuse-timer-calibration.patch
-Patch0109: 0109-raid6-add-Kconfig-option-to-skip-raid6-benchmarking.patch
-Patch0110: 0110-initialize-ata-before-graphics.patch
-Patch0111: 0111-give-rdrand-some-credit.patch
-Patch0112: 0112-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
-Patch0113: 0113-kernel-time-reduce-ntp-wakeups.patch
-Patch0114: 0114-init-wait-for-partition-and-retry-scan.patch
-Patch0115: 0115-print-fsync-count-for-bootchart.patch
-Patch0116: 0116-add-boot-option-to-allow-unsigned-modules.patch
-Patch0117: 0117-enable-stateless-firmware-loading.patch
-Patch0118: 0118-migrate-some-systemd-defaults-to-the-kernel-defaults.patch
-Patch0119: 0119-xattr-allow-setting-user.-attributes-on-symlinks-by-.patch
-Patch0120: 0120-add-scheduler-turbo3-patch.patch
-Patch0121: 0121-use-lfence-instead-of-rep-and-nop.patch
-Patch0122: 0122-do-accept-in-LIFO-order-for-cache-efficiency.patch
-Patch0123: 0123-locking-rwsem-spin-faster.patch
-Patch0124: 0124-ata-libahci-ignore-staggered-spin-up.patch
-Patch0125: 0125-print-CPU-that-faults.patch
-Patch0126: 0126-x86-microcode-Force-update-a-uCode-even-if-the-rev-i.patch
-Patch0127: 0127-x86-microcode-echo-2-reload-to-force-load-ucode.patch
-Patch0128: 0128-fix-bug-in-ucode-force-reload-revision-check.patch
-Patch0129: 0129-nvme-workaround.patch
-Patch0130: 0130-don-t-report-an-error-if-PowerClamp-run-on-other-CPU.patch
+Patch0109: 0109-initialize-ata-before-graphics.patch
+Patch0110: 0110-give-rdrand-some-credit.patch
+Patch0111: 0111-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
+Patch0112: 0112-init-wait-for-partition-and-retry-scan.patch
+Patch0113: 0113-print-fsync-count-for-bootchart.patch
+Patch0114: 0114-add-boot-option-to-allow-unsigned-modules.patch
+Patch0115: 0115-enable-stateless-firmware-loading.patch
+Patch0116: 0116-migrate-some-systemd-defaults-to-the-kernel-defaults.patch
+Patch0117: 0117-xattr-allow-setting-user.-attributes-on-symlinks-by-.patch
+Patch0118: 0118-add-scheduler-turbo3-patch.patch
+Patch0119: 0119-use-lfence-instead-of-rep-and-nop.patch
+Patch0120: 0120-do-accept-in-LIFO-order-for-cache-efficiency.patch
+Patch0121: 0121-locking-rwsem-spin-faster.patch
+Patch0122: 0122-ata-libahci-ignore-staggered-spin-up.patch
+Patch0123: 0123-print-CPU-that-faults.patch
+Patch0124: 0124-x86-microcode-Force-update-a-uCode-even-if-the-rev-i.patch
+Patch0125: 0125-x86-microcode-echo-2-reload-to-force-load-ucode.patch
+Patch0126: 0126-fix-bug-in-ucode-force-reload-revision-check.patch
+Patch0127: 0127-nvme-workaround.patch
+Patch0128: 0128-don-t-report-an-error-if-PowerClamp-run-on-other-CPU.patch
 #Serie.end
 
 %description
@@ -113,6 +112,7 @@ Linux kernel build files
 #cve.patch.end
 
 #mainline.patch.start Mainline patches, upstream backport and fixes
+%patch0051 -p1
 #mainline.patch.end
 
 #Serie.patch.start Clear Linux patches
@@ -144,8 +144,6 @@ Linux kernel build files
 %patch0126 -p1
 %patch0127 -p1
 %patch0128 -p1
-%patch0129 -p1
-%patch0130 -p1
 #Serie.patch.end
 
 cp %{SOURCE1} .
