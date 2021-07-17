@@ -4,7 +4,7 @@
 
 Name:           linux-current
 Version:        5.14.0.rc1
-Release:        41
+Release:        42
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
