@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.9.0.rc8
+Version:        5.14.0.rc1
 Release:        41
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://git.kernel.org/torvalds/t/linux-5.9-rc8.tar.gz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.14-rc1.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -27,7 +27,7 @@ Requires: linux-current-license = %{version}-%{release}
 %define debug_package %{nil}
 %define __strip /bin/true
 
-# kconfig: linux-5.6.6-942
+# kconfig: linux-5.13.2-1056
 
 #cve.start cve patches from 0001 to 050
 #cve.end
@@ -106,7 +106,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.9-rc8
+%setup -q -n linux-5.14-rc1
 
 #cve.patch.start cve patches
 #cve.patch.end
@@ -153,7 +153,7 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer=".rc8-%{release}.${Target}"
+    ExtraVer=".rc1-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
