@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.14.0.rc4
-Release:        45
+Version:        5.14.0.rc5
+Release:        46
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://git.kernel.org/torvalds/t/linux-5.14-rc4.tar.gz
+Source0:        https://git.kernel.org/torvalds/t/linux-5.14-rc5.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -105,7 +105,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.14-rc4
+%setup -q -n linux-5.14-rc5
 
 #cve.patch.start cve patches
 #cve.patch.end
@@ -151,7 +151,7 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer=".rc4-%{release}.${Target}"
+    ExtraVer=".rc5-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
