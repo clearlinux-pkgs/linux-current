@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.14.0-rc5 Kernel Configuration
+# Linux/x86 5.14.0-rc6 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (Clear Linux OS for Intel Architecture) 11.2.1 20210803 releases/gcc-11.2.0-23-g98e482761b"
 CONFIG_CC_IS_GCC=y
@@ -936,7 +936,6 @@ CONFIG_BLK_PM=y
 # IO Schedulers
 #
 CONFIG_MQ_IOSCHED_DEADLINE=y
-CONFIG_MQ_IOSCHED_DEADLINE_CGROUP=y
 CONFIG_MQ_IOSCHED_KYBER=y
 CONFIG_IOSCHED_BFQ=y
 CONFIG_BFQ_GROUP_IOSCHED=y
