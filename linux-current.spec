@@ -3,13 +3,13 @@
 #
 
 Name:           linux-current
-Version:        5.14.0.rc7
-Release:        48
+Version:        6.0.0.rc5
+Release:        49
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://git.kernel.org/torvalds/t/linux-5.14-rc7.tar.gz
+Source0:        https://git.kernel.org/torvalds/t/linux-6.0-rc5.tar.gz
 Source1:        config
 Source2:        cmdline
 
@@ -27,8 +27,6 @@ Requires: linux-current-license = %{version}-%{release}
 %define debug_package %{nil}
 %define __strip /bin/true
 
-# kconfig: linux-5.13.2-1056
-
 #cve.start cve patches from 0001 to 050
 #cve.end
 
@@ -45,7 +43,6 @@ Patch0106: 0106-intel_idle-tweak-cpuidle-cstates.patch
 Patch0107: 0107-bootstats-add-printk-s-to-measure-boot-time-in-more-.patch
 Patch0108: 0108-smpboot-reuse-timer-calibration.patch
 Patch0109: 0109-initialize-ata-before-graphics.patch
-Patch0110: 0110-give-rdrand-some-credit.patch
 Patch0111: 0111-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
 Patch0112: 0112-init-wait-for-partition-and-retry-scan.patch
 Patch0113: 0113-print-fsync-count-for-bootchart.patch
@@ -53,18 +50,34 @@ Patch0114: 0114-add-boot-option-to-allow-unsigned-modules.patch
 Patch0115: 0115-enable-stateless-firmware-loading.patch
 Patch0116: 0116-migrate-some-systemd-defaults-to-the-kernel-defaults.patch
 Patch0117: 0117-xattr-allow-setting-user.-attributes-on-symlinks-by-.patch
-Patch0118: 0118-add-scheduler-turbo3-patch.patch
 Patch0119: 0119-use-lfence-instead-of-rep-and-nop.patch
 Patch0120: 0120-do-accept-in-LIFO-order-for-cache-efficiency.patch
 Patch0121: 0121-locking-rwsem-spin-faster.patch
 Patch0122: 0122-ata-libahci-ignore-staggered-spin-up.patch
 Patch0123: 0123-print-CPU-that-faults.patch
-Patch0124: 0124-x86-microcode-Force-update-a-uCode-even-if-the-rev-i.patch
-Patch0125: 0125-x86-microcode-echo-2-reload-to-force-load-ucode.patch
-Patch0126: 0126-fix-bug-in-ucode-force-reload-revision-check.patch
-Patch0127: 0127-nvme-workaround.patch
-Patch0128: 0128-don-t-report-an-error-if-PowerClamp-run-on-other-CPU.patch
+Patch0124: 0124-x86-microcode-Add-an-option-to-reload-microcode-even.patch
+Patch0125: 0125-nvme-workaround.patch
+Patch0126: 0126-don-t-report-an-error-if-PowerClamp-run-on-other-CPU.patch
+Patch0127: 0127-lib-raid6-add-patch.patch
+Patch0128: 0128-itmt_epb-use-epb-to-scale-itmt.patch
+Patch0130: 0130-itmt2-ADL-fixes.patch
+Patch0131: 0131-add-a-per-cpu-minimum-high-watermark-an-tune-batch-s.patch
+Patch0133: 0133-novector.patch
+Patch0134: scale.patch
+Patch0135: libsgrowdown.patch
+Patch0136: kdf-boottime.patch
+Patch0137: adlrdt.patch
 #Serie.end
+
+#backports
+
+
+Patch0401: sched-hybrid1.patch
+Patch0403: sched-hybrid3.patch
+Patch0404: sched-hybrid4.patch
+
+Patch0501: scaling-1.patch
+Patch0502: scaling-2.patch
 
 %description
 The Linux kernel.
@@ -105,7 +118,7 @@ Requires:       linux-current-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.14-rc7
+%setup -q -n linux-6.0-rc5
 
 #cve.patch.start cve patches
 #cve.patch.end
@@ -123,7 +136,6 @@ Linux kernel build files
 %patch0107 -p1
 %patch0108 -p1
 %patch0109 -p1
-%patch0110 -p1
 %patch0111 -p1
 %patch0112 -p1
 %patch0113 -p1
@@ -131,7 +143,6 @@ Linux kernel build files
 %patch0115 -p1
 %patch0116 -p1
 %patch0117 -p1
-%patch0118 -p1
 %patch0119 -p1
 %patch0120 -p1
 %patch0121 -p1
@@ -142,7 +153,25 @@ Linux kernel build files
 %patch0126 -p1
 %patch0127 -p1
 %patch0128 -p1
+%patch0130 -p1
+%patch0131 -p1
+%patch0133 -p1
+%patch0134 -p1
+%patch0135 -p1
+%patch0136 -p1
+%patch0137 -p1
 #Serie.patch.end
+
+# backports
+
+
+%patch0401 -p1
+%patch0403 -p1
+%patch0404 -p1
+
+%patch0501 -p1
+%patch0502 -p1
+
 
 cp %{SOURCE1} .
 
@@ -151,7 +180,7 @@ BuildKernel() {
 
     Target=$1
     Arch=x86_64
-    ExtraVer=".rc7-%{release}.${Target}"
+    ExtraVer=".rc5-%{release}.${Target}"
 
     perl -p -i -e "s/^EXTRAVERSION.*/EXTRAVERSION = ${ExtraVer}/" Makefile
 
